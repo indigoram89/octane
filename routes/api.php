@@ -8,7 +8,7 @@ Route::get('/', function (Request $request) {
     //     rand(1, 9999);
     // }
 
-    sleep(1);
+    usleep(300 * 1000);
 
     return response()->json($request->all());
 });
