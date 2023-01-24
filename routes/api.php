@@ -8,7 +8,9 @@ Route::get('/', function (Request $request) {
     //     rand(1, 9999);
     // }
 
-    usleep(300 * 1000);
+    $milliseconds = $request->input('sleep') ?: 0;
+
+    usleep($milliseconds * 1000);
 
     return response()->json($request->all());
 });
